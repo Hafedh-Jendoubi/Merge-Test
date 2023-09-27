@@ -62,4 +62,12 @@ public class Zoo {
             return true;
         }
     }
+
+    public Animal makeAnimalGreat(Animal animal){
+	for(int i=0; i<nbrAnimeaux; i++){
+	    if(animals[i].name == animal.name){
+		return animals[i];
+	    }
+	}
+    }
 }
