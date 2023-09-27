@@ -52,12 +52,14 @@ public class Zoo {
         }
     }
 
-    public int searchAnimal(Animal animal){
-         for(int i=0; i<nbrAnimeaux; i++){
-             if(animals[i].name == animal.name){
-                 return i;
-             }
-         }
-         return -1;
+    public boolean updateAnimal(Animal animal){
+        if(searchAnimal(animal) == -1){
+            return false;
+        }else{
+            for(int i=searchAnimal(animal); i<nbrAnimeaux; i++){
+                animals[i] = updateAnimal(animal);
+            }
+            return true;
+        }
     }
 }
